@@ -76,7 +76,23 @@ public class ScoutController : MonoBehaviour {
 
     private void HandleBrake()
     {
+        if(Input.GetAxis("Horizontal") < 0.0f)
+        {
+            anim.SetBool("Brake", true);
+            if(runSpeed > brakeSpeed)
+            {
+                runSpeed -= 1.75f;
+            }
+        }
 
+        if(Input.GetAxis("Horizontal") >= 0.0f)
+        {
+            anim.SetBool("Brake", false);
+            if (runSpeed < topSpeed)
+            {
+                runSpeed += 2.5f;
+            }
+        }
     }
 
     //Slash Encodings:
