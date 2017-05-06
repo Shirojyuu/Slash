@@ -82,6 +82,7 @@
     <Compile Include="Assets\_Scripts\Game\GameManager.cs" />
     <Compile Include="Assets\_Scripts\Game\Rotator.cs" />
     <Compile Include="Assets\_Scripts\Player\ScoutController.cs" />
+    <Compile Include="Assets\_Scripts\Player\WeaponChanger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TSF\Shaders\TSF.shader" />

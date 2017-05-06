@@ -17,12 +17,20 @@ public class ScoutController : MonoBehaviour {
     public float jumpStrength;
     public float checkDist = 3.0f;
 
+    [SerializeField] private BoxCollider2D defaultCollider;
+    [SerializeField] private BoxCollider2D halfCollider;
+
+
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-	}
-	
-	void Update () {
+
+        defaultCollider.enabled = true;
+        halfCollider.enabled = false;
+
+    }
+
+    void Update () {
 	
 	}
 
@@ -55,6 +63,7 @@ public class ScoutController : MonoBehaviour {
 
         //Any time actions:
         HandleJump();
+        HandleSlide();
         HandleBrake();
         HandleSlash();
     }
@@ -63,11 +72,14 @@ public class ScoutController : MonoBehaviour {
     //All of Scout's Moveset
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Action") && grounded)
+        if (Input.GetButtonDown("Action") && Input.GetAxis("Vertical") >= 0.0f && grounded)
         {
+            defaultCollider.enabled = true;
+            halfCollider.enabled = false;
             Input.ResetInputAxes();
             rb.gravityScale = 1.0f;
             Vector2 jump = new Vector2(rb.velocity.x, jumpStrength);
+            anim.SetBool("Sliding", false);
             anim.SetTrigger("Jump");
             rb.AddForce(jump);
             rb.gravityScale = 3.0f;
@@ -92,6 +104,23 @@ public class ScoutController : MonoBehaviour {
             {
                 runSpeed += 2.5f;
             }
+        }
+    }
+
+    private void HandleSlide()
+    {
+        if(Input.GetButton("Slide"))
+        {
+            anim.SetBool("Sliding", true);
+            defaultCollider.enabled = false;
+            halfCollider.enabled = true;
+        }
+
+        if(Input.GetButtonUp("Slide"))
+        {
+            anim.SetBool("Sliding", false);
+            defaultCollider.enabled = true;
+            halfCollider.enabled = false;
         }
     }
 
