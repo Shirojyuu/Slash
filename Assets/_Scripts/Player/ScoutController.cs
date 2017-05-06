@@ -10,7 +10,10 @@ public class ScoutController : MonoBehaviour {
 
     private bool grounded;
 
+    public float topSpeed;
     public float runSpeed;
+    public float brakeSpeed;
+
     public float jumpStrength;
     public float checkDist = 3.0f;
 
@@ -92,14 +95,14 @@ public class ScoutController : MonoBehaviour {
             }
 
             //Up Slash
-            if (Input.GetAxis("Vertical") < 0.0f)
+            if (Input.GetAxis("Vertical") > 0.0f)
             {
                 anim.Play("UpSlash");
 
             }
 
             //Down Slash
-            if (Input.GetAxis("Vertical") > 0.0f)
+            if (Input.GetAxis("Vertical") < 0.0f)
             {
                 anim.Play("DownSlash");
             }
