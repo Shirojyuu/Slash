@@ -20,7 +20,7 @@ public class ScoutController : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+	
 	}
 
     private void FixedUpdate()
