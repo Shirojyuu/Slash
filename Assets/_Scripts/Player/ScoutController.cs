@@ -11,6 +11,7 @@ public class ScoutController : MonoBehaviour {
     private bool grounded;
     private int attacking;
 
+    public WeaponChanger weaponSys;
     public float topSpeed;
     public float runSpeed;
     public float brakeSpeed;
@@ -45,7 +46,6 @@ public class ScoutController : MonoBehaviour {
 
         if (groundCheck.collider != null)
         {
-            Debug.Log(groundCheck.collider);
             grounded = true;
             rb.gravityScale = 1.0f;
         }
@@ -57,7 +57,6 @@ public class ScoutController : MonoBehaviour {
 
         anim.SetBool("Grounded", grounded);
 
-        Debug.Log(grounded);
         //All you'll ever be doing is running right...so...
         Vector2 movement = new Vector2(runSpeed, 0.0f);
         rb.AddForce(movement);
@@ -162,6 +161,7 @@ public class ScoutController : MonoBehaviour {
 
         if(Input.GetButtonDown("Slash") && !grounded)
         {
+
             anim.Play("AirSlash");
         }
     }
@@ -182,6 +182,9 @@ public class ScoutController : MonoBehaviour {
     public void SetAttacking(int value)
     {
         attacking = value;
+
+        weaponSys.activeWeapon.GetComponent<BoxCollider2D>().enabled = (value == 0) ? false : true;
+
         Debug.Log(value);
     }
 }

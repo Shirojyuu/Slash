@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaponChanger : MonoBehaviour {
     //Weapon 0 is always the base/starter weapon.
     public List<GameObject> weapons;
-
+    public GameObject activeWeapon;
     private ParticleSystem ps;
 
     // Use this for initialization
@@ -28,6 +28,7 @@ public class WeaponChanger : MonoBehaviour {
     {
         ps.Play();
         weapons[id].SetActive(true);
+        activeWeapon = weapons[id];
 
         for (int i = 0; i < weapons.Count; i++)
         {
