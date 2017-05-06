@@ -82,7 +82,33 @@ public class ScoutController : MonoBehaviour {
      * */
     private void HandleSlash()
     {
+        if (Input.GetButtonDown("Slash") && grounded)
+        {
+            //Front Slash
+            if(Input.GetAxis("Vertical") == 0.0f)
+            {
+                anim.Play("FrontSlash");
 
+            }
+
+            //Up Slash
+            if (Input.GetAxis("Vertical") < 0.0f)
+            {
+                anim.Play("UpSlash");
+
+            }
+
+            //Down Slash
+            if (Input.GetAxis("Vertical") > 0.0f)
+            {
+                anim.Play("DownSlash");
+            }
+        }
+
+        if(Input.GetButtonDown("Slash") && !grounded)
+        {
+            anim.Play("AirSlash");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
