@@ -1,0 +1,1331 @@
+fileFormatVersion: 2
+guid: ac029349a5539df46a7e4d5271759002
+timeCreated: 1494031307
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm_L
+    100002: Arm_L_001
+    100004: Arm_L_002
+    100006: Arm_L_004
+    100008: Arm_L_005
+    100010: Arm_L_006
+    100012: Arm_L_007
+    100014: Arm_L_008
+    100016: Arm_L_009
+    100018: Arm_L_010
+    100020: Arm_L_Palm
+    100022: Arm_R
+    100024: Arm_R_001
+    100026: Arm_R_002
+    100028: Arm_R_004
+    100030: Arm_R_005
+    100032: Arm_R_006
+    100034: Arm_R_007
+    100036: Arm_R_008
+    100038: Arm_R_009
+    100040: Arm_R_010
+    100042: Arm_R_Palm
+    100044: Cylinder
+    100046: Foot_L_004
+    100048: Foot_R_004
+    100050: Head
+    100052: Neck
+    100054: NurbsCircle
+    100056: NurbsCircle_001
+    100058: Root
+    100060: Root_001
+    100062: Root_001_L
+    100064: Root_001_L_001
+    100066: Root_001_L_002
+    100068: Root_001_L_003
+    100070: Root_001_R
+    100072: Root_001_R_001
+    100074: Root_001_R_002
+    100076: Root_001_R_003
+    100078: Root_002
+    100080: Root_003
+    100082: Root_004
+    100084: Root_005
+    100086: Root_006
+    100088: ScoutBody
+    100090: ScoutHair
+    100092: //RootNode
+    100094: ScoutRig
+    100096: TailPivot
+    400000: Arm_L
+    400002: Arm_L_001
+    400004: Arm_L_002
+    400006: Arm_L_004
+    400008: Arm_L_005
+    400010: Arm_L_006
+    400012: Arm_L_007
+    400014: Arm_L_008
+    400016: Arm_L_009
+    400018: Arm_L_010
+    400020: Arm_L_Palm
+    400022: Arm_R
+    400024: Arm_R_001
+    400026: Arm_R_002
+    400028: Arm_R_004
+    400030: Arm_R_005
+    400032: Arm_R_006
+    400034: Arm_R_007
+    400036: Arm_R_008
+    400038: Arm_R_009
+    400040: Arm_R_010
+    400042: Arm_R_Palm
+    400044: Cylinder
+    400046: Foot_L_004
+    400048: Foot_R_004
+    400050: Head
+    400052: Neck
+    400054: NurbsCircle
+    400056: NurbsCircle_001
+    400058: Root
+    400060: Root_001
+    400062: Root_001_L
+    400064: Root_001_L_001
+    400066: Root_001_L_002
+    400068: Root_001_L_003
+    400070: Root_001_R
+    400072: Root_001_R_001
+    400074: Root_001_R_002
+    400076: Root_001_R_003
+    400078: Root_002
+    400080: Root_003
+    400082: Root_004
+    400084: Root_005
+    400086: Root_006
+    400088: ScoutBody
+    400090: ScoutHair
+    400092: //RootNode
+    400094: ScoutRig
+    400096: TailPivot
+    2300000: NurbsCircle
+    2300002: NurbsCircle_001
+    3300000: NurbsCircle
+    3300002: NurbsCircle_001
+    4300000: Cylinder
+    4300002: ScoutBody
+    4300004: ScoutHair
+    4300006: NurbsCircle_001
+    4300008: NurbsCircle
+    7400000: Default Take
+    7400002: AirSlash
+    7400004: Brake
+    7400006: Fall
+    7400008: FrontSlash
+    7400010: Jump
+    7400012: Running
+    7400014: Slide
+    7400016: UpSlash
+    9500000: //RootNode
+    13700000: Cylinder
+    13700002: ScoutBody
+    13700004: ScoutHair
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: AirSlash
+      takeName: AirSlash
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Brake
+      takeName: Brake
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fall
+      takeName: Fall
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FrontSlash
+      takeName: FrontSlash
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Jump
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Running
+      takeName: Running
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Slide
+      takeName: Slide
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: UpSlash
+      takeName: UpSlash
+      firstFrame: 0
+      lastFrame: 6
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: NurbsCircle
+        weight: 1
+      - path: NurbsCircle_001
+        weight: 1
+      - path: ScoutBody
+        weight: 1
+      - path: ScoutHair
+        weight: 1
+      - path: ScoutRig
+        weight: 1
+      - path: ScoutRig/Arm_L
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_004
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_005/Arm_L_006
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_007/Arm_L_008
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009
+        weight: 1
+      - path: ScoutRig/Arm_L/Arm_L_001/Arm_L_002/Arm_L_Palm/Arm_L_009/Arm_L_010
+        weight: 1
+      - path: ScoutRig/Arm_R
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_004
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_005/Arm_R_006
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_007/Arm_R_008
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009
+        weight: 1
+      - path: ScoutRig/Arm_R/Arm_R_001/Arm_R_002/Arm_R_Palm/Arm_R_009/Arm_R_010
+        weight: 1
+      - path: ScoutRig/Root
+        weight: 1
+      - path: ScoutRig/Root/Neck
+        weight: 1
+      - path: ScoutRig/Root/Neck/Head
+        weight: 1
+      - path: ScoutRig/Root_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_L/Root_001_L_001/Root_001_L_002/Root_001_L_003/Foot_L_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_001_R/Root_001_R_001/Root_001_R_002/Root_001_R_003/Foot_R_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005
+        weight: 1
+      - path: ScoutRig/Root_001/Root_002/Root_003/Root_004/Root_005/Root_006
+        weight: 1
+      - path: ScoutRig/TailPivot
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
