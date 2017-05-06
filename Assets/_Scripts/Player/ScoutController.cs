@@ -109,7 +109,14 @@ public class ScoutController : MonoBehaviour {
 
     private void HandleSlide()
     {
-        if(Input.GetButton("Slide"))
+        if(Input.GetButtonDown("Slide"))
+        {
+            rb.gravityScale = 3.0f;
+            rb.gravityScale = 1.0f;
+
+        }
+
+        if (Input.GetButton("Slide"))
         {
             anim.SetBool("Sliding", true);
             defaultCollider.enabled = false;
