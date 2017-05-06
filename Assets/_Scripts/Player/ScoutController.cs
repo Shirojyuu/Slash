@@ -35,6 +35,7 @@ public class ScoutController : MonoBehaviour {
         {
             Debug.Log(groundCheck.collider);
             grounded = true;
+            rb.gravityScale = 1.0f;
         }
 
         else
@@ -62,9 +63,11 @@ public class ScoutController : MonoBehaviour {
         if (Input.GetButtonDown("Action") && grounded)
         {
             Input.ResetInputAxes();
+            rb.gravityScale = 1.0f;
             Vector2 jump = new Vector2(rb.velocity.x, jumpStrength);
             anim.SetTrigger("Jump");
             rb.AddForce(jump);
+            rb.gravityScale = 3.0f;
         }
     }
 
@@ -88,6 +91,11 @@ public class ScoutController : MonoBehaviour {
         {
             Transform loopPoint = GameObject.FindGameObjectWithTag("Respawn").transform;
             transform.position = loopPoint.position;
+        }
+
+        if(collision.tag.Equals("SmallTreasure"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
