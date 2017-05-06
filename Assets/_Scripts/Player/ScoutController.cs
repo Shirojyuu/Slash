@@ -9,11 +9,12 @@ public class ScoutController : MonoBehaviour {
     private Animator anim;
 
     private bool grounded;
+    private int attacking;
 
     public float topSpeed;
     public float runSpeed;
     public float brakeSpeed;
-
+    
     public float jumpStrength;
     public float checkDist = 3.0f;
 
@@ -111,8 +112,7 @@ public class ScoutController : MonoBehaviour {
     {
         if(Input.GetButtonDown("Slide"))
         {
-            rb.gravityScale = 3.0f;
-            rb.gravityScale = 1.0f;
+            transform.Translate(0.0f, -0.5f, 0.0f);
 
         }
 
@@ -178,5 +178,10 @@ public class ScoutController : MonoBehaviour {
         {
             Destroy(collision.gameObject);
         }
+    }
+    public void SetAttacking(int value)
+    {
+        attacking = value;
+        Debug.Log(value);
     }
 }
