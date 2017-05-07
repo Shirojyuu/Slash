@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public uint score = 0;
+    public uint life = 2;
 
     public uint transformationLevel = 0;
     public uint points_Komori = 0;

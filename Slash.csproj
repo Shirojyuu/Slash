@@ -116,6 +116,9 @@
     <Compile Include="Assets\_Scripts\Game\CameraFollow.cs" />
     <Compile Include="Assets\_Scripts\Game\GameManager.cs" />
     <Compile Include="Assets\_Scripts\Game\Rotator.cs" />
+    <Compile Include="Assets\_Scripts\Game\UI\Destroyer.cs" />
+    <Compile Include="Assets\_Scripts\Game\UI\LifeCounter.cs" />
+    <Compile Include="Assets\_Scripts\Game\UI\ScoreCounter.cs" />
     <Compile Include="Assets\_Scripts\Game\UI\ScorePopup.cs" />
     <Compile Include="Assets\_Scripts\Player\ScoutController.cs" />
     <Compile Include="Assets\_Scripts\Player\Weapon.cs" />

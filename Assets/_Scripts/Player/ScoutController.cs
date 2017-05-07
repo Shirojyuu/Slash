@@ -12,6 +12,7 @@ public class ScoutController : MonoBehaviour {
     private bool canWJump;
     private int attacking;
     private bool wallJumping;
+    private bool knockback;
 
     private GameManager gman;
 
@@ -22,6 +23,10 @@ public class ScoutController : MonoBehaviour {
     
     public float jumpStrength;
     public float checkDist = 3.0f;
+
+    public bool invincibile = false;
+    public float invincibilityLength = 5.0f;
+    public float invincibilityTimer = 0.0f;
 
     [SerializeField] private BoxCollider2D defaultCollider;
     [SerializeField] private BoxCollider2D halfCollider;
@@ -39,7 +44,16 @@ public class ScoutController : MonoBehaviour {
     }
 
     void Update () {
-	
+	    if(invincibilityTimer > 0.0f)
+        {
+            invincibile = true;
+            invincibilityTimer -= Time.deltaTime;
+        }
+
+        if(invincibilityTimer <= 0.0f)
+        {
+            invincibile = false;
+        }
 	}
 
     private void FixedUpdate()
@@ -54,6 +68,7 @@ public class ScoutController : MonoBehaviour {
         {
             wallJumping = false;
             canWJump = false;
+            knockback = false;
             grounded = true;
             transform.rotation = Quaternion.identity;
             rb.gravityScale = 1.0f;
@@ -71,7 +86,7 @@ public class ScoutController : MonoBehaviour {
         /* *************** */ 
         //All you'll ever be doing is running right...so...
         Vector2 movement = new Vector2(runSpeed, 0.0f);
-        if (!wallJumping)
+        if (!wallJumping || !canWJump || !knockback)
             rb.AddForce(movement);
 
         //Any time actions:
@@ -221,6 +236,18 @@ public class ScoutController : MonoBehaviour {
         {
             canWJump = true;
             anim.Play("WallGrab");
+        }
+
+        if(collision.tag.Equals("Enemy_Fly") && attacking == 0)
+        {
+            if (!invincibile)
+            {
+                gman.life--;
+                knockback = true;
+                invincibilityTimer = invincibilityLength;
+                rb.gravityScale = 3.0f;
+                rb.AddForce(new Vector2(-1000.0f, -550.0f));
+            }
         }
 
     }

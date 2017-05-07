@@ -6,6 +6,7 @@ public class EnemyGeneralController : MonoBehaviour {
     public enum EnemyType { FLY, GROUND, EARTH };
 
     public EnemyType type;
+    public bool onScreen;
     private GameManager gman;
 	// Use this for initialization
 	void Start () {
@@ -16,15 +17,9 @@ public class EnemyGeneralController : MonoBehaviour {
 	void Update () {
         if (type == EnemyType.FLY)
         {
-
+            transform.Translate(new Vector3(-2.5f * Time.deltaTime, 0.0f));
         }
-
     }
 
-    private void OnDestroy()
-    {
-
-
-
-    }
+  
 }
