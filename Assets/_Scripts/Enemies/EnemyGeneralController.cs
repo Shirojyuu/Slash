@@ -7,6 +7,8 @@ public class EnemyGeneralController : MonoBehaviour {
 
     public EnemyType type;
     public bool onScreen;
+
+    private bool seen = false;
     private GameManager gman;
 	// Use this for initialization
 	void Start () {
@@ -15,11 +17,26 @@ public class EnemyGeneralController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (type == EnemyType.FLY)
+        onScreen = OSTest();
+        if (onScreen)
         {
-            //transform.Translate(new Vector3(-2.5f * Time.deltaTime, 0.0f));
+            seen = true;
+            if (type == EnemyType.FLY)
+            {
+                transform.Translate(new Vector3(-4.5f * Time.deltaTime, 0.0f));
+            }
         }
+
+        if (seen && !onScreen)
+            Destroy(gameObject);
     }
 
+    private bool OSTest()
+    {
+        if (GetComponentInChildren<SkinnedMeshRenderer>().isVisible)
+            return true;
+
+        return false;
+    }
   
 }

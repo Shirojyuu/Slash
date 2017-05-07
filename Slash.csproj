@@ -125,6 +125,7 @@
     <Compile Include="Assets\_Scripts\Player\WeaponChanger.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\SineDeform.shader" />
     <None Include="Assets\TSF\Shaders\TSF.shader" />
     <None Include="Assets\TSF\Shaders\TSFOutline.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\Anton OFL.txt" />
