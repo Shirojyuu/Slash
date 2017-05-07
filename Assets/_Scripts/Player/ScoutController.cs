@@ -11,6 +11,8 @@ public class ScoutController : MonoBehaviour {
     private bool grounded;
     private int attacking;
 
+    private GameManager gman;
+
     public WeaponChanger weaponSys;
     public float topSpeed;
     public float runSpeed;
@@ -26,6 +28,8 @@ public class ScoutController : MonoBehaviour {
     void Start () {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        gman = GameObject.Find("GameManager").GetComponent<GameManager>();
+
 
         defaultCollider.enabled = true;
         halfCollider.enabled = false;
@@ -176,6 +180,13 @@ public class ScoutController : MonoBehaviour {
 
         if(collision.tag.Equals("SmallTreasure"))
         {
+            Vector3 spawnMsg = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
+            gman.score += 50;
+            GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
+            pntGet.GetComponent<ScorePopup>().pointValue = 50;
+
+            
+
             Destroy(collision.gameObject);
         }
     }
