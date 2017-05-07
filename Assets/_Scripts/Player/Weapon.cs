@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour {
             GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
             pntGet.GetComponent<ScorePopup>().pointValue = 200;
             gman.score += 200;
+            gman.points_Komori++;
             Destroy(collision.gameObject);
 
         }

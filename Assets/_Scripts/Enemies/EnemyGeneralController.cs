@@ -14,13 +14,16 @@ public class EnemyGeneralController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (type == EnemyType.FLY)
+        {
+
+        }
+
+    }
 
     private void OnDestroy()
     {
-        if (type == EnemyType.FLY)
-            gman.points_Komori++;
+
 
 
     }

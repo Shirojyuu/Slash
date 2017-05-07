@@ -9,7 +9,9 @@ public class ScoutController : MonoBehaviour {
     private Animator anim;
 
     private bool grounded;
+    private bool canWJump;
     private int attacking;
+    private bool wallJumping;
 
     private GameManager gman;
 
@@ -50,9 +52,13 @@ public class ScoutController : MonoBehaviour {
 
         if (groundCheck.collider != null)
         {
+            wallJumping = false;
+            canWJump = false;
             grounded = true;
+            transform.rotation = Quaternion.identity;
             rb.gravityScale = 1.0f;
         }
+
 
         else
         {
@@ -61,19 +67,23 @@ public class ScoutController : MonoBehaviour {
 
         anim.SetBool("Grounded", grounded);
 
+        
+        /* *************** */ 
         //All you'll ever be doing is running right...so...
         Vector2 movement = new Vector2(runSpeed, 0.0f);
-        rb.AddForce(movement);
+        if (!wallJumping)
+            rb.AddForce(movement);
 
         //Any time actions:
         HandleJump();
         HandleSlide();
         HandleBrake();
         HandleSlash();
+        HandleWallJump();
     }
 
 
-    //All of Scout's Moveset
+    //All of Scout's Moveset:
     private void HandleJump()
     {
         if (Input.GetButtonDown("Action") && Input.GetAxis("Vertical") >= 0.0f && grounded)
@@ -87,6 +97,23 @@ public class ScoutController : MonoBehaviour {
             anim.SetTrigger("Jump");
             rb.AddForce(jump);
             rb.gravityScale = 3.0f;
+        }
+    }
+
+    private void HandleWallJump()
+    {
+        if(Input.GetButtonDown("Action") && canWJump)
+        {
+            wallJumping = true;
+            rb.gravityScale = 1.0f;
+            Vector2 jump = new Vector2(-Mathf.Sign(transform.forward.x) * 750.0f, jumpStrength);
+            Vector3 rot = transform.rotation.eulerAngles;
+            rot = new Vector3(rot.x, rot.y + 180, rot.z);
+            transform.rotation = Quaternion.Euler(rot);
+            rb.AddForce(jump);
+            rb.gravityScale = 3.0f;
+
+
         }
     }
 
@@ -189,7 +216,15 @@ public class ScoutController : MonoBehaviour {
 
             Destroy(collision.gameObject);
         }
+
+        if (collision.tag.Equals("WJump"))
+        {
+            canWJump = true;
+            anim.Play("WallGrab");
+        }
+
     }
+
     public void SetAttacking(int value)
     {
         attacking = value;
