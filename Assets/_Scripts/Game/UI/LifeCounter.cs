@@ -19,11 +19,13 @@ public class LifeCounter : MonoBehaviour {
 	    switch(gman.life)
         {
             case 0:
-                lifeIcons[0].GetComponent<Animator>().Play("LoseHeart");
+                if (lifeIcons[1] != null)
+                    lifeIcons[0].GetComponent<Animator>().Play("LoseHeart");
                 break;
 
             case 1:
-                lifeIcons[1].GetComponent<Animator>().Play("LoseHeart");
+                if(lifeIcons[1] != null)
+                    lifeIcons[1].GetComponent<Animator>().Play("LoseHeart");
                 break;
         }
 	}

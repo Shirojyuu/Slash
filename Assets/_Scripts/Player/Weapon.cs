@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour {
 
+    Rigidbody2D playerRB;
+    private void Start()
+    {
+        playerRB = GetComponentInParent<Rigidbody2D>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag.Equals("Enemy_Fly"))
@@ -15,6 +20,7 @@ public class Weapon : MonoBehaviour {
             pntGet.GetComponent<ScorePopup>().pointValue = 200;
             gman.score += 200;
             gman.points_Komori++;
+            //playerRB.AddForce(new Vector2(0, 550.0f));
             Destroy(collision.gameObject);
 
         }

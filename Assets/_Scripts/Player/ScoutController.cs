@@ -11,7 +11,7 @@ public class ScoutController : MonoBehaviour {
     private bool grounded;
     private bool canWJump;
     private int attacking;
-    private bool wallJumping;
+    [SerializeField] private bool wallJumping;
     private bool knockback;
 
     private GameManager gman;
@@ -27,6 +27,9 @@ public class ScoutController : MonoBehaviour {
     public bool invincibile = false;
     public float invincibilityLength = 5.0f;
     public float invincibilityTimer = 0.0f;
+
+    public uint usedJumps = 0;
+    public uint maxJumps = 1;
 
     [SerializeField] private BoxCollider2D defaultCollider;
     [SerializeField] private BoxCollider2D halfCollider;
@@ -66,6 +69,7 @@ public class ScoutController : MonoBehaviour {
 
         if (groundCheck.collider != null)
         {
+            usedJumps = 0;
             wallJumping = false;
             canWJump = false;
             knockback = false;
@@ -86,9 +90,14 @@ public class ScoutController : MonoBehaviour {
         /* *************** */ 
         //All you'll ever be doing is running right...so...
         Vector2 movement = new Vector2(runSpeed, 0.0f);
-        if (!wallJumping || !canWJump || !knockback)
+        if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")))
             rb.AddForce(movement);
 
+        if(rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) && !grounded)
+        {
+            rb.gravityScale = 3.0f;
+            anim.Play("Fall");
+        }
         //Any time actions:
         HandleJump();
         HandleSlide();
@@ -101,17 +110,27 @@ public class ScoutController : MonoBehaviour {
     //All of Scout's Moveset:
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Action") && Input.GetAxis("Vertical") >= 0.0f && grounded)
+        if (Input.GetButtonDown("Action") && Input.GetAxis("Vertical") >= 0.0f)
         {
-            defaultCollider.enabled = true;
-            halfCollider.enabled = false;
-            Input.ResetInputAxes();
-            rb.gravityScale = 1.0f;
-            Vector2 jump = new Vector2(rb.velocity.x, jumpStrength);
-            anim.SetBool("Sliding", false);
-            anim.SetTrigger("Jump");
-            rb.AddForce(jump);
-            rb.gravityScale = 3.0f;
+            if (usedJumps < maxJumps)
+            {
+                defaultCollider.enabled = true;
+                halfCollider.enabled = false;
+                Input.ResetInputAxes();
+                rb.gravityScale = 1.0f;
+                Vector2 jump = new Vector2(rb.velocity.x, jumpStrength);
+                anim.SetBool("Sliding", false);
+
+                if(usedJumps == 0)
+                    anim.Play("Jump");
+
+                if (usedJumps == 1)
+                    anim.Play("DoubleJump");
+
+                rb.AddForce(jump);
+                rb.gravityScale = 3.0f;
+                usedJumps++;
+            }
         }
     }
 
@@ -243,6 +262,7 @@ public class ScoutController : MonoBehaviour {
             if (!invincibile)
             {
                 gman.life--;
+                anim.SetTrigger("Ouch");
                 knockback = true;
                 invincibilityTimer = invincibilityLength;
                 rb.gravityScale = 3.0f;
@@ -259,5 +279,19 @@ public class ScoutController : MonoBehaviour {
         weaponSys.activeWeapon.GetComponent<BoxCollider2D>().enabled = (value == 0) ? false : true;
 
         Debug.Log(value);
+    }
+
+    public void EnableAbility(int id)
+    {
+        switch(id)
+        {
+            case 0:
+                maxJumps = 1;
+                break;
+
+            case 1:
+                maxJumps = 2;
+                break;
+        }
     }
 }
