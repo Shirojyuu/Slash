@@ -67,15 +67,22 @@ public class ScoutController : MonoBehaviour {
         RaycastHit2D groundCheck = Physics2D.Raycast(checkPos, checkDist * Vector2.down, checkDist);
         Debug.DrawRay(checkPos, Vector2.down * checkDist, Color.green);
 
+        
         if (groundCheck.collider != null)
         {
-            usedJumps = 0;
-            wallJumping = false;
-            canWJump = false;
-            knockback = false;
-            grounded = true;
-            transform.rotation = Quaternion.identity;
-            rb.gravityScale = 1.0f;
+            float dotProductCheck = Vector2.Dot(-transform.up, groundCheck.transform.up);
+            Debug.Log(dotProductCheck);
+
+            if (dotProductCheck < -0.5f)
+            {
+                usedJumps = 0;
+                wallJumping = false;
+                canWJump = false;
+                knockback = false;
+                grounded = true;
+                transform.rotation = Quaternion.identity;
+                rb.gravityScale = 1.0f;
+            }
         }
 
 
