@@ -8,13 +8,16 @@ public class ScoutController : MonoBehaviour {
     private Rigidbody2D rb;
     private Animator anim;
 
+    private bool dead = false;
     private bool grounded;
+    private bool canFStep = false;
     private bool canWJump;
     private int attacking;
     [SerializeField] private bool wallJumping;
     private bool knockback;
 
     private GameManager gman;
+    private ParticleSystem fStepPs;
 
     public WeaponChanger weaponSys;
     public float topSpeed;
@@ -28,6 +31,9 @@ public class ScoutController : MonoBehaviour {
     public float invincibilityLength = 5.0f;
     public float invincibilityTimer = 0.0f;
 
+    public float fStepLength = 2.0f;
+    public float fStepTimer = 0.0f;
+
     public uint usedJumps = 0;
     public uint maxJumps = 1;
 
@@ -39,7 +45,7 @@ public class ScoutController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         gman = GameObject.Find("GameManager").GetComponent<GameManager>();
-
+        fStepPs = GetComponent<ParticleSystem>();
 
         defaultCollider.enabled = true;
         halfCollider.enabled = false;
@@ -53,10 +59,23 @@ public class ScoutController : MonoBehaviour {
             invincibilityTimer -= Time.deltaTime;
         }
 
-        if(invincibilityTimer <= 0.0f)
+        if (fStepTimer > 0.0f && canFStep)
+        {
+            invincibile = true;
+            fStepTimer -= Time.deltaTime;
+        }
+
+        if (invincibilityTimer <= 0.0f || (fStepTimer <= 0.0f && canFStep))
         {
             invincibile = false;
         }
+
+        if(gman.life == 0 && !dead)
+        {
+            KillAnimation();
+            dead = true;
+        }
+
 	}
 
     private void FixedUpdate()
@@ -111,6 +130,10 @@ public class ScoutController : MonoBehaviour {
         HandleBrake();
         HandleSlash();
         HandleWallJump();
+
+        //Special Actions:
+        if(canFStep)
+            HandleFlashStep();
     }
 
 
@@ -181,24 +204,27 @@ public class ScoutController : MonoBehaviour {
 
     private void HandleSlide()
     {
-        if(Input.GetButtonDown("Slide"))
+        if (Input.GetAxis("Horizontal") == 0.0f)
         {
-            transform.Translate(0.0f, -0.5f, 0.0f);
+            if (Input.GetButtonDown("Slide"))
+            {
+                transform.Translate(0.0f, -0.5f, 0.0f);
 
-        }
+            }
 
-        if (Input.GetButton("Slide"))
-        {
-            anim.SetBool("Sliding", true);
-            defaultCollider.enabled = false;
-            halfCollider.enabled = true;
-        }
+            if (Input.GetButton("Slide"))
+            {
+                anim.SetBool("Sliding", true);
+                defaultCollider.enabled = false;
+                halfCollider.enabled = true;
+            }
 
-        if(Input.GetButtonUp("Slide"))
-        {
-            anim.SetBool("Sliding", false);
-            defaultCollider.enabled = true;
-            halfCollider.enabled = false;
+            if (Input.GetButtonUp("Slide"))
+            {
+                anim.SetBool("Sliding", false);
+                defaultCollider.enabled = true;
+                halfCollider.enabled = false;
+            }
         }
     }
 
@@ -208,7 +234,7 @@ public class ScoutController : MonoBehaviour {
      * */
     private void HandleSlash()
     {
-        if (Input.GetButtonDown("Slash") && grounded)
+        if (Input.GetButtonDown("Slash") && grounded && fStepTimer <= 0.0f)
         {
             //Front Slash
             if(Input.GetAxis("Vertical") == 0.0f)
@@ -235,6 +261,20 @@ public class ScoutController : MonoBehaviour {
         {
 
             anim.Play("AirSlash");
+        }
+    }
+
+    private void HandleFlashStep()
+    {
+        if (Input.GetAxis("Horizontal") > 0.0f)
+        {
+            if (Input.GetButtonDown("Slide") && grounded && fStepTimer <= 0.0f)
+            {
+                rb.AddForce(new Vector2(380.0f, 0.0f));
+                anim.Play("FlashStep");
+                fStepPs.Play();
+                fStepTimer = fStepLength;
+            }
         }
     }
 
@@ -314,16 +354,27 @@ public class ScoutController : MonoBehaviour {
         {
             case 0:
                 maxJumps = 1;
+                canFStep = false;
                 break;
 
             case 1:
                 maxJumps = 2;
+                canFStep = false;
                 break;
 
             case 2:
                 maxJumps = 1;
-
+                canFStep = true;
                 break;
         }
+    }
+
+    public void KillAnimation()
+    {
+        rb.velocity = new Vector2(0.0f, 0.0f);
+        rb.AddForce(new Vector2(0.0f, 900.0f));
+        GetComponent<BoxCollider2D>().enabled = false;
+        Camera.main.GetComponent<CameraFollow>().deadPlayer = true;
+        anim.SetBool("Dead", true);
     }
 }
