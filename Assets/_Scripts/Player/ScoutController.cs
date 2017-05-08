@@ -39,6 +39,16 @@ public class ScoutController : MonoBehaviour {
     public uint usedJumps = 0;
     public uint maxJumps = 1;
 
+    public AudioClip jumpSnd;
+    public AudioClip swingSnd;
+    public AudioClip slashSnd;
+    public AudioClip transSnd;
+    public AudioClip chestSnd;
+    public AudioClip jewelSnd;
+    public AudioClip dmgSnd;
+    public AudioClip dieSnd;
+    private AudioSource asrc;
+
     [SerializeField] private BoxCollider2D defaultCollider;
     [SerializeField] private BoxCollider2D halfCollider;
 
@@ -48,6 +58,7 @@ public class ScoutController : MonoBehaviour {
         anim = GetComponent<Animator>();
         gman = GameObject.Find("GameManager").GetComponent<GameManager>();
         fStepPs = GetComponent<ParticleSystem>();
+        asrc = GetComponent<AudioSource>();
 
         defaultCollider.enabled = true;
         halfCollider.enabled = false;
@@ -162,6 +173,7 @@ public class ScoutController : MonoBehaviour {
         {
             if (usedJumps < maxJumps)
             {
+                FPlay(jumpSnd);
                 defaultCollider.enabled = true;
                 halfCollider.enabled = false;
                 Input.ResetInputAxes();
@@ -186,6 +198,8 @@ public class ScoutController : MonoBehaviour {
     {
         if(Input.GetButtonDown("Action") && canWJump)
         {
+            FPlay(jumpSnd);
+
             rb.velocity = new Vector2(0.0f, 0.0f);
             wallJumping = true;
             rb.gravityScale = 1.0f;
@@ -255,10 +269,12 @@ public class ScoutController : MonoBehaviour {
     {
         if (Input.GetButtonDown("Slash") && grounded && fStepTimer <= 0.0f)
         {
+
             //Front Slash
             if(Input.GetAxis("Vertical") == 0.0f)
             {
                 anim.Play("FrontSlash");
+                FPlay(swingSnd);
 
             }
 
@@ -266,13 +282,14 @@ public class ScoutController : MonoBehaviour {
             if (Input.GetAxis("Vertical") > 0.0f)
             {
                 anim.Play("UpSlash");
-
+                FPlay(swingSnd);
             }
 
             //Down Slash
             if (Input.GetAxis("Vertical") < 0.0f)
             {
                 anim.Play("DownSlash");
+                FPlay(swingSnd);
             }
         }
 
@@ -280,6 +297,7 @@ public class ScoutController : MonoBehaviour {
         {
 
             anim.Play("AirSlash");
+            FPlay(swingSnd);
         }
     }
 
@@ -317,6 +335,7 @@ public class ScoutController : MonoBehaviour {
 
         if(collision.tag.Equals("SmallTreasure"))
         {
+            FPlay(jewelSnd);
             Vector3 spawnMsg = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
             gman.score += 50;
             GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
@@ -327,6 +346,8 @@ public class ScoutController : MonoBehaviour {
 
         if (collision.tag.Equals("LargeTreasure"))
         {
+            FPlay(chestSnd);
+
             Vector3 spawnMsg = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
             gman.score += 1500;
             GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
@@ -345,6 +366,7 @@ public class ScoutController : MonoBehaviour {
         {
             if (!invincibile)
             {
+                FPlay(dmgSnd);
                 gman.life--;
                 anim.SetTrigger("Ouch");
                 knockback = true;
@@ -358,6 +380,7 @@ public class ScoutController : MonoBehaviour {
         {
             if (!invincibile)
             {
+                FPlay(dmgSnd);
                 gman.life--;
                 anim.SetTrigger("Ouch");
                 knockback = true;
@@ -409,6 +432,7 @@ public class ScoutController : MonoBehaviour {
 
     public void KillAnimation()
     {
+        gman.GetComponent<AudioSource>().Stop();
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.AddForce(new Vector2(0.0f, 900.0f));
         foreach(BoxCollider2D bc in GetComponents<BoxCollider2D>())
@@ -418,5 +442,13 @@ public class ScoutController : MonoBehaviour {
         Camera.main.GetComponent<CameraFollow>().deadPlayer = true;
         anim.SetBool("Dead", true);
         gman.death = true;
+        FPlay(dieSnd);
+
+    }
+
+    public void FPlay(AudioClip clip)
+    {
+        asrc.clip = clip;
+        asrc.Play();
     }
 }

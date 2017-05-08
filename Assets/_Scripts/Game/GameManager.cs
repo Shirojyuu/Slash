@@ -40,5 +40,12 @@ public class GameManager : MonoBehaviour {
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        }
+    }
+
 }

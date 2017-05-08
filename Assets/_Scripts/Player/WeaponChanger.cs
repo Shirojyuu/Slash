@@ -28,6 +28,7 @@ public class WeaponChanger : MonoBehaviour {
 	void Update () {
 		if(gman.points_Komori == 3)
         {
+            player.FPlay(player.transSnd);
             TransformWeapon(1);
             gman.points_Lizard = 0;
             gman.points_Mole = 0;
@@ -36,6 +37,7 @@ public class WeaponChanger : MonoBehaviour {
 
         if (gman.points_Lizard == 3)
         {
+            player.FPlay(player.transSnd);
             TransformWeapon(2);
             gman.points_Lizard = 0;
             gman.points_Mole = 0;
@@ -44,6 +46,7 @@ public class WeaponChanger : MonoBehaviour {
 
         if (gman.points_Mole == 3)
         {
+            player.FPlay(player.transSnd);
             TransformWeapon(3);
             gman.points_Lizard = 0;
             gman.points_Mole = 0;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyGeneralController : MonoBehaviour {
-    public enum EnemyType { FLY, GROUND, EARTH };
+    public enum EnemyType { FLY, FLY2, GROUND, EARTH };
 
     public EnemyType type;
     public bool onScreen;
@@ -24,6 +24,11 @@ public class EnemyGeneralController : MonoBehaviour {
             if (type == EnemyType.FLY)
             {
                 transform.Translate(new Vector3(-4.5f * Time.deltaTime, 0.0f));
+            }
+
+            if (type == EnemyType.FLY2)
+            {
+                transform.Translate(new Vector3(-5.5f * Time.deltaTime, Mathf.Sin(Time.deltaTime * 2.0f)));
             }
 
             if (type == EnemyType.GROUND)

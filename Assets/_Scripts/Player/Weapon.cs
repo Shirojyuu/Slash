@@ -5,14 +5,17 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     Rigidbody2D playerRB;
+    ScoutController sc;
     private void Start()
     {
         playerRB = GetComponentInParent<Rigidbody2D>();
+        sc = GetComponentInParent<ScoutController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag.Equals("Enemy_Fly"))
         {
+            sc.FPlay(sc.slashSnd);
             GameManager gman = GameObject.Find("GameManager").GetComponent<GameManager>();
 
             Vector3 spawnMsg = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -27,6 +30,8 @@ public class Weapon : MonoBehaviour {
 
         if (collision.gameObject.tag.Equals("Enemy_Ground"))
         {
+            sc.FPlay(sc.slashSnd);
+
             GameManager gman = GameObject.Find("GameManager").GetComponent<GameManager>();
 
             Vector3 spawnMsg = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -42,6 +47,8 @@ public class Weapon : MonoBehaviour {
 
         if (collision.gameObject.tag.Equals("Enemy_Under"))
         {
+            sc.FPlay(sc.slashSnd);
+
             GameManager gman = GameObject.Find("GameManager").GetComponent<GameManager>();
 
             Vector3 spawnMsg = new Vector3(transform.position.x, transform.position.y, transform.position.z);
