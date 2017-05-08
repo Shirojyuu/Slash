@@ -41,6 +41,14 @@ public class WeaponChanger : MonoBehaviour {
             gman.points_Mole = 0;
             gman.points_Komori = 0;
         }
+
+        if (gman.points_Mole == 3)
+        {
+            TransformWeapon(3);
+            gman.points_Lizard = 0;
+            gman.points_Mole = 0;
+            gman.points_Komori = 0;
+        }
     }
 
     public void TransformWeapon(int id)

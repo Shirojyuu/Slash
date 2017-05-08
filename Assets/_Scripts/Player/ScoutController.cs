@@ -11,6 +11,8 @@ public class ScoutController : MonoBehaviour {
     private bool dead = false;
     private bool grounded;
     private bool canFStep = false;
+    private bool canECrash = false;
+    private bool earthCrashing = false;
     private bool canWJump;
     private int attacking;
     [SerializeField] private bool wallJumping;
@@ -97,6 +99,13 @@ public class ScoutController : MonoBehaviour {
                 if (dotProductCheck < -0.5f)
                 {
                     usedJumps = 0;
+
+                    if (earthCrashing)
+                    {
+                        earthCrashing = false;
+                        anim.SetBool("Crash", earthCrashing);
+                        SetAttacking(0);
+                    }
                     wallJumping = false;
                     canWJump = false;
                     knockback = false;
@@ -118,8 +127,11 @@ public class ScoutController : MonoBehaviour {
             /* *************** */
             //All you'll ever be doing is running right...so...
             Vector2 movement = new Vector2(runSpeed, 0.0f);
-            if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")))
+            if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) || (!earthCrashing && canECrash))
                 rb.AddForce(movement);
+
+            if (earthCrashing)
+                rb.velocity = new Vector2(0.0f, rb.velocity.y);
 
             if (rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) && !grounded)
             {
@@ -136,6 +148,9 @@ public class ScoutController : MonoBehaviour {
             //Special Actions:
             if (canFStep)
                 HandleFlashStep();
+
+            if (canECrash)
+                HandleEarthCrash();
         }
     }
 
@@ -282,6 +297,16 @@ public class ScoutController : MonoBehaviour {
         }
     }
 
+    private void HandleEarthCrash()
+    {
+        if(Input.GetButtonDown("Slide") && !grounded && !earthCrashing && Input.GetAxis("Vertical") < 0.0f)
+        {
+            rb.AddForce(new Vector2(0.0f, -2000.0f));
+            anim.SetBool("Crash", true);
+            SetAttacking(1);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag.Equals("Loop"))
@@ -329,7 +354,7 @@ public class ScoutController : MonoBehaviour {
             }
         }
 
-        if (collision.tag.Equals("Enemy_Ground") && attacking == 0)
+        if ((collision.tag.Equals("Enemy_Ground") || collision.tag.Equals("Enemy_Under")) && attacking == 0)
         {
             if (!invincibile)
             {
@@ -359,16 +384,25 @@ public class ScoutController : MonoBehaviour {
             case 0:
                 maxJumps = 1;
                 canFStep = false;
+                canECrash = false;
                 break;
 
             case 1:
                 maxJumps = 2;
                 canFStep = false;
+                canECrash = false;
                 break;
 
             case 2:
                 maxJumps = 1;
                 canFStep = true;
+                canECrash = false;
+                break;
+
+            case 3:
+                maxJumps = 1;
+                canFStep = false;
+                canECrash = true;
                 break;
         }
     }
