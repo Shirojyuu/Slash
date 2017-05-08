@@ -277,6 +277,18 @@ public class ScoutController : MonoBehaviour {
             }
         }
 
+        if (collision.tag.Equals("Enemy_Ground") && attacking == 0)
+        {
+            if (!invincibile)
+            {
+                gman.life--;
+                anim.SetTrigger("Ouch");
+                knockback = true;
+                invincibilityTimer = invincibilityLength;
+                rb.gravityScale = 3.0f;
+                rb.AddForce(new Vector2(-1000.0f, 0.0f));
+            }
+        }
     }
 
     public void SetAttacking(int value)

@@ -25,6 +25,11 @@ public class EnemyGeneralController : MonoBehaviour {
             {
                 transform.Translate(new Vector3(-4.5f * Time.deltaTime, 0.0f));
             }
+
+            if (type == EnemyType.GROUND)
+            {
+                transform.Translate(new Vector3(-2.5f * Time.deltaTime, 0.0f));
+            }
         }
 
         if (seen && !onScreen)
