@@ -115,6 +115,7 @@
     <Compile Include="Assets\_Scripts\Enemies\EnemyGeneralController.cs" />
     <Compile Include="Assets\_Scripts\Game\CameraFollow.cs" />
     <Compile Include="Assets\_Scripts\Game\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\Game\MenuController.cs" />
     <Compile Include="Assets\_Scripts\Game\Rotator.cs" />
     <Compile Include="Assets\_Scripts\Game\UI\Destroyer.cs" />
     <Compile Include="Assets\_Scripts\Game\UI\LifeCounter.cs" />
