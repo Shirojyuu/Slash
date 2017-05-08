@@ -6,14 +6,24 @@ public class ScorePopup : MonoBehaviour {
     public TextMeshPro tmesh;
     public float distance;
     public int pointValue;
-    public Color scoreColor;
+    public Color lowScore;
+    public Color medScore;
+    public Color highScore;
+
     // Use this for initialization
     void Start () {
         tmesh = GetComponent<TextMeshPro>();
         tmesh.text = pointValue.ToString();
-        if (scoreColor != null)
-            tmesh.color = scoreColor;
-	}
+
+        if (pointValue <= 50)
+            tmesh.color = lowScore;
+
+        if (pointValue <= 200)
+            tmesh.color = medScore;
+
+        if (pointValue > 200)
+            tmesh.color = highScore;
+    }
 	
 	// Update is called once per frame
 	void Update () {

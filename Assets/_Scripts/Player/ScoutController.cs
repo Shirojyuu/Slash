@@ -253,7 +253,15 @@ public class ScoutController : MonoBehaviour {
             GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
             pntGet.GetComponent<ScorePopup>().pointValue = 50;
 
-            
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.tag.Equals("LargeTreasure"))
+        {
+            Vector3 spawnMsg = new Vector3(collision.transform.position.x, collision.transform.position.y, collision.transform.position.z);
+            gman.score += 1500;
+            GameObject pntGet = Instantiate(gman.normalScorePopup, spawnMsg, Quaternion.identity);
+            pntGet.GetComponent<ScorePopup>().pointValue = 1500;
 
             Destroy(collision.gameObject);
         }
@@ -310,6 +318,11 @@ public class ScoutController : MonoBehaviour {
 
             case 1:
                 maxJumps = 2;
+                break;
+
+            case 2:
+                maxJumps = 1;
+
                 break;
         }
     }
