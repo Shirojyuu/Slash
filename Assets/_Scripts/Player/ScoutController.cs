@@ -80,60 +80,63 @@ public class ScoutController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        //Ground Check  
-        Vector2 checkPos = new Vector2(transform.position.x, transform.position.y - GetComponent<BoxCollider2D>().bounds.size.y / 2.0f);
-
-        RaycastHit2D groundCheck = Physics2D.Raycast(checkPos, checkDist * Vector2.down, checkDist);
-        Debug.DrawRay(checkPos, Vector2.down * checkDist, Color.green);
-
-        
-        if (groundCheck.collider != null)
+        if (!dead)
         {
-            float dotProductCheck = Vector2.Dot(-transform.up, groundCheck.transform.up);
-            Debug.Log(dotProductCheck);
+            //Ground Check  
+            Vector2 checkPos = new Vector2(transform.position.x, transform.position.y - GetComponent<BoxCollider2D>().bounds.size.y / 2.0f);
 
-            if (dotProductCheck < -0.5f)
+            RaycastHit2D groundCheck = Physics2D.Raycast(checkPos, checkDist * Vector2.down, checkDist);
+            Debug.DrawRay(checkPos, Vector2.down * checkDist, Color.green);
+
+
+            if (groundCheck.collider != null)
             {
-                usedJumps = 0;
-                wallJumping = false;
-                canWJump = false;
-                knockback = false;
-                grounded = true;
-                transform.rotation = Quaternion.identity;
-                rb.gravityScale = 1.0f;
+                float dotProductCheck = Vector2.Dot(-transform.up, groundCheck.transform.up);
+                Debug.Log(dotProductCheck);
+
+                if (dotProductCheck < -0.5f)
+                {
+                    usedJumps = 0;
+                    wallJumping = false;
+                    canWJump = false;
+                    knockback = false;
+                    grounded = true;
+                    transform.rotation = Quaternion.identity;
+                    rb.gravityScale = 1.0f;
+                }
             }
+
+
+            else
+            {
+                grounded = false;
+            }
+
+            anim.SetBool("Grounded", grounded);
+
+
+            /* *************** */
+            //All you'll ever be doing is running right...so...
+            Vector2 movement = new Vector2(runSpeed, 0.0f);
+            if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")))
+                rb.AddForce(movement);
+
+            if (rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) && !grounded)
+            {
+                rb.gravityScale = 3.0f;
+                anim.Play("Fall");
+            }
+            //Any time actions:
+            HandleJump();
+            HandleSlide();
+            HandleBrake();
+            HandleSlash();
+            HandleWallJump();
+
+            //Special Actions:
+            if (canFStep)
+                HandleFlashStep();
         }
-
-
-        else
-        {
-            grounded = false;
-        }
-
-        anim.SetBool("Grounded", grounded);
-
-        
-        /* *************** */ 
-        //All you'll ever be doing is running right...so...
-        Vector2 movement = new Vector2(runSpeed, 0.0f);
-        if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")))
-            rb.AddForce(movement);
-
-        if(rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) && !grounded)
-        {
-            rb.gravityScale = 3.0f;
-            anim.Play("Fall");
-        }
-        //Any time actions:
-        HandleJump();
-        HandleSlide();
-        HandleBrake();
-        HandleSlash();
-        HandleWallJump();
-
-        //Special Actions:
-        if(canFStep)
-            HandleFlashStep();
     }
 
 
@@ -168,6 +171,7 @@ public class ScoutController : MonoBehaviour {
     {
         if(Input.GetButtonDown("Action") && canWJump)
         {
+            rb.velocity = new Vector2(0.0f, 0.0f);
             wallJumping = true;
             rb.gravityScale = 1.0f;
             Vector2 jump = new Vector2(-Mathf.Sign(transform.forward.x) * 750.0f, jumpStrength);
@@ -373,8 +377,12 @@ public class ScoutController : MonoBehaviour {
     {
         rb.velocity = new Vector2(0.0f, 0.0f);
         rb.AddForce(new Vector2(0.0f, 900.0f));
-        GetComponent<BoxCollider2D>().enabled = false;
+        foreach(BoxCollider2D bc in GetComponents<BoxCollider2D>())
+        {
+            Destroy(bc);
+        }
         Camera.main.GetComponent<CameraFollow>().deadPlayer = true;
         anim.SetBool("Dead", true);
+        gman.death = true;
     }
 }
