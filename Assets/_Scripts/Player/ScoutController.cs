@@ -9,7 +9,7 @@ public class ScoutController : MonoBehaviour {
     private Animator anim;
 
     private bool dead = false;
-    private bool grounded;
+    [SerializeField] private bool grounded;
     private bool canFStep = false;
     private bool canECrash = false;
     private bool earthCrashing = false;
@@ -167,7 +167,7 @@ public class ScoutController : MonoBehaviour {
             rb.velocity = new Vector2(0.0f, 0.0f);
             wallJumping = true;
             rb.gravityScale = 1.0f;
-            Vector2 jump = new Vector2(-Mathf.Sign(transform.forward.x) * 750.0f, jumpStrength);
+            Vector2 jump = new Vector2(-Mathf.Sign(transform.forward.x) * 820.0f, jumpStrength);
             Vector3 rot = transform.rotation.eulerAngles;
             rot = new Vector3(rot.x, rot.y + 180, rot.z);
             transform.rotation = Quaternion.Euler(rot);
@@ -326,7 +326,11 @@ public class ScoutController : MonoBehaviour {
             canWJump = true;
             anim.Play("WallGrab");
         }
-
+        
+        if(!collision.tag.Equals("WJump"))
+        {
+            canWJump = false;
+        }
         if(collision.tag.Equals("Enemy_Fly") && attacking == 0)
         {
             if (!invincibile)
@@ -453,6 +457,15 @@ public class ScoutController : MonoBehaviour {
             }
         }
 
+        
+
+        else
+        {
+            grounded = false;
+        }
+
+        anim.SetBool("Grounded", grounded);
+
         if (sideCheck.collider != null && !sideCheck.collider.isTrigger)
         {
             float dotprod = Vector2.Dot(sidePos, -sideCheck.collider.transform.right);
@@ -463,13 +476,6 @@ public class ScoutController : MonoBehaviour {
             else
                 wallHit = false;
         }
-
-        else
-        {
-            grounded = false;
-        }
-
-        anim.SetBool("Grounded", grounded);
     }
 
     public void FPlay(AudioClip clip)
