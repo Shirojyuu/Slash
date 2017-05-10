@@ -17,6 +17,7 @@ public class ScoutController : MonoBehaviour {
     private int attacking;
     [SerializeField] private bool wallJumping;
     private bool knockback;
+    private bool wallHit = false;
 
     private GameManager gman;
     private ParticleSystem fStepPs;
@@ -66,6 +67,8 @@ public class ScoutController : MonoBehaviour {
     }
 
     void Update () {
+
+        //Timers for invicibility, etc.
 	    if(invincibilityTimer > 0.0f)
         {
             invincibile = true;
@@ -95,50 +98,11 @@ public class ScoutController : MonoBehaviour {
     {
         if (!dead)
         {
-            //Ground Check  
-            Vector2 checkPos = new Vector2(transform.position.x, transform.position.y - GetComponent<BoxCollider2D>().bounds.size.y / 2.0f);
-
-            RaycastHit2D groundCheck = Physics2D.Raycast(checkPos, checkDist * Vector2.down, checkDist);
-            Debug.DrawRay(checkPos, Vector2.down * checkDist, Color.green);
-
-
-            if (groundCheck.collider != null)
-            {
-                float dotProductCheck = Vector2.Dot(-transform.up, groundCheck.transform.up);
-                Debug.Log(dotProductCheck);
-
-                if (dotProductCheck < -0.5f)
-                {
-                    usedJumps = 0;
-
-                    if (earthCrashing)
-                    {
-                        earthCrashing = false;
-                        anim.SetBool("Crash", earthCrashing);
-                        SetAttacking(0);
-                    }
-                    wallJumping = false;
-                    canWJump = false;
-                    knockback = false;
-                    grounded = true;
-                    transform.rotation = Quaternion.identity;
-                    rb.gravityScale = 1.0f;
-                }
-            }
-
-
-            else
-            {
-                grounded = false;
-            }
-
-            anim.SetBool("Grounded", grounded);
-
-
+            CheckGrounded();
             /* *************** */
             //All you'll ever be doing is running right...so...
             Vector2 movement = new Vector2(runSpeed, 0.0f);
-            if (!wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) || (!earthCrashing && canECrash))
+            if (!wallHit || !wallJumping || !canWJump || !knockback || !rb.IsTouchingLayers(LayerMask.NameToLayer("FallZone")) || (!earthCrashing && canECrash))
                 rb.AddForce(movement);
 
             if (earthCrashing)
@@ -169,7 +133,7 @@ public class ScoutController : MonoBehaviour {
     //All of Scout's Moveset:
     private void HandleJump()
     {
-        if (Input.GetButtonDown("Action") && Input.GetAxis("Vertical") >= 0.0f)
+        if (Input.GetButtonDown("Action"))
         {
             if (usedJumps < maxJumps)
             {
@@ -237,11 +201,11 @@ public class ScoutController : MonoBehaviour {
 
     private void HandleSlide()
     {
-        if (Input.GetAxis("Horizontal") == 0.0f)
+        if (Input.GetAxis("Horizontal") == 0.0f && grounded)
         {
             if (Input.GetButtonDown("Slide"))
             {
-                transform.Translate(0.0f, -0.5f, 0.0f);
+                transform.Translate(0.0f, -1.0f, 0.0f);
 
             }
 
@@ -267,7 +231,7 @@ public class ScoutController : MonoBehaviour {
      * */
     private void HandleSlash()
     {
-        if (Input.GetButtonDown("Slash") && grounded && fStepTimer <= 0.0f)
+        if (Input.GetButtonDown("Slash") && grounded && fStepTimer <= 0.0f && !anim.GetBool("Sliding"))
         {
 
             //Front Slash
@@ -319,6 +283,7 @@ public class ScoutController : MonoBehaviour {
     {
         if(Input.GetButtonDown("Slide") && !grounded && !earthCrashing && Input.GetAxis("Vertical") < 0.0f)
         {
+
             rb.AddForce(new Vector2(0.0f, -2000.0f));
             anim.SetBool("Crash", true);
             SetAttacking(1);
@@ -444,6 +409,67 @@ public class ScoutController : MonoBehaviour {
         gman.death = true;
         FPlay(dieSnd);
 
+    }
+
+    //Helpers 
+
+    private void CheckGrounded()
+    {
+
+        //Ground Check  
+        Vector2 checkPos = new Vector2(transform.position.x, transform.position.y - GetComponent<BoxCollider2D>().bounds.size.y / 2.0f);
+
+        //Right Vector Check
+        Vector2 sidePos = new Vector2(transform.position.x + GetComponent<BoxCollider2D>().bounds.size.x / 4.0f, transform.position.y);
+
+        RaycastHit2D groundCheck = Physics2D.Raycast(checkPos, checkDist * -transform.up, checkDist);
+        RaycastHit2D sideCheck = Physics2D.Raycast(sidePos, checkDist / 2.0f * transform.right, checkDist);
+
+        Debug.DrawRay(checkPos, -transform.up * checkDist, Color.green);
+        Debug.DrawRay(sidePos, transform.right * checkDist * 0.5f, Color.red);
+
+
+        if (groundCheck.collider != null)
+        {
+            float dotProductCheck = Vector2.Dot(-transform.up, groundCheck.transform.up);
+            Debug.Log(dotProductCheck);
+
+            if (dotProductCheck < -0.5f)
+            {
+                usedJumps = 0;
+
+                if (earthCrashing)
+                {
+                    earthCrashing = false;
+                    anim.SetBool("Crash", false);
+                    SetAttacking(0);
+                }
+                wallJumping = false;
+                canWJump = false;
+                knockback = false;
+                grounded = true;
+                transform.rotation = Quaternion.identity;
+                rb.gravityScale = 1.0f;
+            }
+        }
+
+        if (sideCheck.collider != null && !sideCheck.collider.isTrigger)
+        {
+            float dotprod = Vector2.Dot(sidePos, -sideCheck.collider.transform.right);
+
+            if (dotprod <= -1.0f)
+                wallHit = true;
+
+            else
+                wallHit = false;
+        }
+
+        else
+        {
+            grounded = false;
+        }
+
+        anim.SetBool("Grounded", grounded);
     }
 
     public void FPlay(AudioClip clip)
