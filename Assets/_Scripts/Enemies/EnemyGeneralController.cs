@@ -28,7 +28,7 @@ public class EnemyGeneralController : MonoBehaviour {
 
             if (type == EnemyType.FLY2)
             {
-                transform.Translate(new Vector3(-5.5f * Time.deltaTime, Mathf.Sin(Time.deltaTime * 2.0f)));
+                transform.Translate(new Vector3(-9.5f * Time.deltaTime, Mathf.Sin(Time.deltaTime * 2.0f)));
             }
 
             if (type == EnemyType.GROUND)
